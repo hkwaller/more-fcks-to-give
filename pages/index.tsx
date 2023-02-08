@@ -1,8 +1,12 @@
 import Head from 'next/head'
-import Image from 'next/image'
 import { Inter } from '@next/font/google'
-import styles from '@/styles/Home.module.css'
-import Search from '@/src/components/Search'
+import styles from 'styles/Home.module.css'
+import Search from 'src/components/Search'
+import Header from 'src/components/Header'
+import { Box } from '@chakra-ui/react'
+import { css } from '@emotion/react'
+import Background from 'src/components/Background'
+import BigButton from 'src/components/BigButton'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -16,6 +20,11 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className={styles.main}>
+        <Box pos="absolute" zIndex={-1}>
+          <Background />
+        </Box>
+        <Header smallText="Until there are no more" bigText="Fucks to give" />
+        <BigButton />
         <Search />
       </main>
     </>
